@@ -6,7 +6,17 @@ class LandingScreens extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: []),
+      backgroundColor: Colors.grey[900],
+      body: Column(children: [
+        Expanded(
+          child: Container(
+            child: Text(
+              'Tic Tac Toe',
+              style: TextStyle(),
+            ),
+          ),
+        )
+      ]),
     );
   }
 }
