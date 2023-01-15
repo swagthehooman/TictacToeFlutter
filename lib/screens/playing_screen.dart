@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/button_tile.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PlayingScreen extends StatefulWidget {
   const PlayingScreen({Key? key}) : super(key: key);
@@ -96,20 +96,27 @@ class _PlayingScreenState extends State<PlayingScreen> {
       barrierDismissible: false,
       context: context,
       builder: (context) => AlertDialog(
+        backgroundColor: Colors.grey.shade700,
         actions: [
           TextButton(
               onPressed: () {
                 reset();
                 Navigator.of(context).pop();
               },
-              child: const Text(
+              child: Text(
                 "Play Again?",
-                style: TextStyle(
-                  fontSize: 20,
+                style: GoogleFonts.pressStart2p(
+                  fontSize: 8,
+                  color: Colors.black,
                 ),
               ))
         ],
-        title: Text("$winner is the Winner!"),
+        title: Text(
+          "$winner is the Winner!",
+          style: GoogleFonts.pressStart2p(
+            fontSize: 12,
+          ),
+        ),
       ),
     );
     if (winner == 'O') {
@@ -130,11 +137,10 @@ class _PlayingScreenState extends State<PlayingScreen> {
                 reset();
                 Navigator.of(context).pop();
               },
-              child: const Text(
+              child: Text(
                 "Play Again?",
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+                style:
+                    GoogleFonts.pressStart2p(fontSize: 18, color: Colors.white),
               ))
         ],
         title: const Text("Draw!"),
@@ -169,17 +175,16 @@ class _PlayingScreenState extends State<PlayingScreen> {
                       children: [
                         Text(
                           "Player X",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                          ),
+                          style: GoogleFonts.pressStart2p(
+                              fontSize: 18, color: Colors.white),
+                        ),
+                        const SizedBox(
+                          height: 20,
                         ),
                         Text(
                           '$xScore',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                          ),
+                          style: GoogleFonts.pressStart2p(
+                              fontSize: 24, color: Colors.white),
                         )
                       ],
                     ),
@@ -191,17 +196,16 @@ class _PlayingScreenState extends State<PlayingScreen> {
                         children: [
                           Text(
                             "Player O",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                            ),
+                            style: GoogleFonts.pressStart2p(
+                                fontSize: 18, color: Colors.white),
+                          ),
+                          const SizedBox(
+                            height: 20,
                           ),
                           Text(
                             '$oScore',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 30,
-                            ),
+                            style: GoogleFonts.pressStart2p(
+                                fontSize: 24, color: Colors.white),
                           )
                         ]),
                   )
@@ -224,8 +228,8 @@ class _PlayingScreenState extends State<PlayingScreen> {
                           backgroundColor: Colors.grey.shade800),
                       child: Text(
                         displayXO[index],
-                        style:
-                            const TextStyle(fontSize: 30, color: Colors.white),
+                        style: GoogleFonts.pressStart2p(
+                            fontSize: 28, color: Colors.white),
                       ),
                       onPressed: () => _onTap(index),
                     ));
@@ -233,8 +237,24 @@ class _PlayingScreenState extends State<PlayingScreen> {
             ),
           ),
           Expanded(
-            child: Container(),
-          ),
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Tic Tac Toe",
+                style:
+                    GoogleFonts.pressStart2p(fontSize: 28, color: Colors.white),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Text(
+                "Created by Swagnik.",
+                style:
+                    GoogleFonts.pressStart2p(fontSize: 12, color: Colors.white),
+              ),
+            ],
+          )),
         ],
       ),
     );

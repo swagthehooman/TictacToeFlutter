@@ -22,6 +22,6 @@ class TicTacToe extends StatefulWidget {
 class _TicTacToeState extends State<TicTacToe> {
   @override
   Widget build(BuildContext context) {
-    return PlayingScreen();
+    return LandingScreens();
   }
 }
