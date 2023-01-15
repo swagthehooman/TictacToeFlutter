@@ -107,7 +107,7 @@ class _PlayingScreenState extends State<PlayingScreen> {
                 "Play Again?",
                 style: GoogleFonts.pressStart2p(
                   fontSize: 8,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ))
         ],
@@ -115,6 +115,7 @@ class _PlayingScreenState extends State<PlayingScreen> {
           "$winner is the Winner!",
           style: GoogleFonts.pressStart2p(
             fontSize: 12,
+            color: Colors.white,
           ),
         ),
       ),
@@ -131,6 +132,7 @@ class _PlayingScreenState extends State<PlayingScreen> {
       barrierDismissible: false,
       context: context,
       builder: (context) => AlertDialog(
+        backgroundColor: Colors.grey.shade700,
         actions: [
           TextButton(
               onPressed: () {
@@ -139,11 +141,19 @@ class _PlayingScreenState extends State<PlayingScreen> {
               },
               child: Text(
                 "Play Again?",
-                style:
-                    GoogleFonts.pressStart2p(fontSize: 18, color: Colors.white),
+                style: GoogleFonts.pressStart2p(
+                  fontSize: 8,
+                  color: Colors.white,
+                ),
               ))
         ],
-        title: const Text("Draw!"),
+        title: Text(
+          "Draw!",
+          style: GoogleFonts.pressStart2p(
+            fontSize: 12,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
